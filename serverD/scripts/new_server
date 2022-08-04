@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+SERVER_NAME="$1"
+SERVER_IP="$2"
+SERVER_TYPE="$3"
+
+DEFAULT_PEM_PATH="DEFAULT_PEM_PATH"
+DEFAULT_PASSWD="DEFAULT_PASSWD"
+
+if [ $SERVER_TYPE == "pem" ]
+then
+    /usr/bin/env serverD add $SERVER_NAME $SERVER_IP 22 work --pem=$DEFAULT_PEM_PATH
+else
+    /usr/bin/env serverD add $SERVER_NAME $SERVER_IP 22 work --passwd=$DEFAULT_PASSWD
+fi

@@ -1,0 +1,8 @@
+scripts:
+  login: serverLogin
+  get: serverGet
+  put: serverPut
+database:
+  db_name: serverD.db
+  server_table: serverD
+  init_sql:  CREATE TABLE if not exists serverD(serverName varchar(10) PRIMARY KEY, host varchar(20), user varchar(20), port int, pwd varchar(100), pem_path varchar(255))
